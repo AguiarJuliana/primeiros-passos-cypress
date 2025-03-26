@@ -175,5 +175,13 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AguiarJuliana/primeiros-passos-cypress.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AguiarJuliana/primeiros-passos-cypress/issues"
+  },
+  "homepage": "https://github.com/AguiarJuliana/primeiros-passos-cypress#readme",
   "description": ""
 }
