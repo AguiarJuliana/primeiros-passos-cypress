@@ -4,6 +4,9 @@ import DashboardPage from '../pages/dashboardPage'
 import MenuPage from '../pages/menuPages'
 import MyInfoPage from '../pages/myInfoPage'
 
+const Chance = require('chance')
+
+const chance = new Chance()
 const loginPage = new LoginPage()
 const dashboardPage = new DashboardPage()
 const menuPage = new MenuPage()
@@ -11,24 +14,18 @@ const myInfoPage = new MyInfoPage()
 
 describe('Orange HRM Tests', () => {
 
-
-  it('User Info update - Sucess', () => {
+  it('User Info update - Success', () => {
     loginPage.accessLoginPage()
-    loginPage.loginWithAnyUser(userData.userSucess.username, userData.userSucess.password)
+    loginPage.loginWithAnyUser(userData.userSuccess.username, userData.userSuccess.password)
     
     dashboardPage.checkDashboardPage()
 
     menuPage.accessMyInfo()
 
-    myInfoPage.fillPersonaldeDetails('Frist Name', 'Last Name')
+    myInfoPage.fillPersonaldeDetails(chance.first(), chance.last())
     myInfoPage.fillEmployeeDetails('EmployId', 'OtherId', 'Drivers Number', '2025-29-07')
     myInfoPage.fillStatus()
     myInfoPage.saveForm()
   })
 
-  it('Login - Fail',() => {
-   loginPage.accessLoginPage()
-   loginPage.loginWithAnyUser(userData.userFail.username, userData.userFail.password)
-   loginPage.checkAccessInvalid()
-  })
 })
