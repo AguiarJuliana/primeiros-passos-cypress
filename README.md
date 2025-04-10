@@ -17,5 +17,5 @@ npm install
 npx cypress opne
 
 # Rum the automation by commad line
-npx cypress rum
+npx cypress run
 ```
